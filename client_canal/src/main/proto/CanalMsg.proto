@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_package = "org.bigwinner.protobuf";
+option java_outer_classname = "CanalMsg";
+
+/* 行数据 */
+message RowData {
+  string logfilename = 15;
+  uint64 logfileoffset = 14;
+  uint64 executeTime = 1;
+  string schemaName = 2;
+  string tableName = 3;
+  string eventType = 4;
+
+  /* 列数据 */
+  map<string, string> columns = 5;
+}
